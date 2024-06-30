@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 
+"""
+This script contains a function to generate Pascal's triangle.
+
+Pascal's triangle is a triangular array of the binomial coefficients.
+Each row represents the coefficients of the binomial expansion.
+"""
+
 def generate_pascals_triangle(n):
     """
     Generate Pascal's triangle with n rows.
@@ -10,28 +17,19 @@ def generate_pascals_triangle(n):
     Returns:
     List[List[int]]: A list of lists representing Pascal's triangle.
     """
-    # If n is less than or equal to 0, return an empty list
     if n <= 0:
         return []
 
-    # Initialize the triangle with the first row
-    triangle = [[1]]  # First row is always [1]
+    triangle = [[1]]  # First row
 
-    # Generate each row of the triangle
     for _ in range(1, n):
-        last_row = triangle[-1]  # Get the last row of the triangle
-        row = [1]  # Start the new row with a 1
-
-        # Calculate the intermediate values of the new row
+        last_row = triangle[-1]
+        row = [1]
         row.extend([
             last_row[j] + last_row[j + 1]
             for j in range(len(last_row) - 1)
         ])
-
-        # End the new row with a 1
         row.append(1)
-
-        # Append the new row to the triangle
         triangle.append(row)
 
     return triangle
