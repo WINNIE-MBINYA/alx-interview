@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /**
- * Script that fetches and prints the names of all characters 
+ * Script that fetches and prints the names of all characters
  * from a specific Star Wars movie using the Star Wars API.
  *
  * Usage: ./0-starwars_characters.js <movie_id>
